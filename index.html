@@ -126,7 +126,6 @@
       </section>
       <!--Czym się zajmujemy-->
       <section class="section-what-we-do">
-        
         <div class="container">
           <h2 class="topic-two">Czym się zajmujemy</h2>
           <ul class="container-what-we-do-main">
@@ -172,9 +171,8 @@
           </ul>
         </div>
       </section>
-       <!--Nasz zaspół-->
+      <!--Nasz zaspół-->
       <section class="section-our-team">
-       
         <div class="container">
           <h2 class="topic-two">Nasz zespół</h2>
           <ul class="container-our-team-main">
@@ -327,7 +325,6 @@
       </section>
       <!--Nasi klienci-->
       <section class="section-our-customers">
-        
         <div class="container">
           <h2 class="topic-two">Nasi klienci</h2>
           <ul class="container-our-customers-main">
@@ -447,16 +444,106 @@
             </a>
           </div>
         </div>
+        <form class="newsletter">
+          <label for="user_email"
+            ><p class="sign-up">ZAPISZ SIĘ DO NEWSLETTERA</p></label
+          >
+          <div class="container-input">
+            <input
+              class="input-footer"
+              type="email"
+              name="email"
+              id="user_email"
+              placeholder="E-mail"
+            />
+            <button class="button-footer" type="submit">
+              <p class="button-footer-sign-up">Zapisz się</p>
+              <svg class="button-footer-svg" width="24" height="24">
+                <use href="./images/icons.svg#icon-icon-send"></use>
+              </svg>
+            </button>
+          </div>
+        </form>
       </div>
     </footer>
     <!-- Modal -->
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
-        <button type="button" class="close-btn" data-modal-close>
-          <svg width="18" height="18">
-            <use href="./images/icons.svg#icon-close-black-18dp-2-1"></use>
-          </svg>
-        </button>
+        <form>
+          <button type="button" class="close-btn" data-modal-close>
+            <svg width="18" height="18">
+              <use href="./images/icons.svg#icon-close-black-18dp-2-1"></use>
+            </svg>
+          </button>
+          <p class="modal-title">Zostaw swoje dane w formularzu poniżej</p>
+          <div class="modal-conteiner-inputs">
+            <label class="modal-label" for="modal-user-name">Imie</label>
+            <label class="modal-input">
+              <svg width="18" height="18">
+                <use href="./images/icons.svg#icon-person-black-18dp-1"></use>
+              </svg>
+              <input
+                class="input"
+                type="text"
+                name="name"
+                id="modal-user-name"
+              />
+            </label>
+            <label class="modal-label" for="modal-user-tel">Telefon</label>
+            <label class="modal-input">
+              <svg width="18" height="18">
+                <use href="./images/icons.svg#icon-phone-black-18dp-1"></use>
+              </svg>
+              <input
+                class="input"
+                type="tel"
+                name="phone_numer"
+                id="modal-user-tel"
+              />
+            </label>
+            <label class="modal-label" for="modal-user-email">Email</label>
+            <label class="modal-input">
+              <svg width="18" height="18">
+                <use href="./images/icons.svg#icon-email-black-18dp-1"></use>
+              </svg>
+              <input
+                class="input"
+                type="email"
+                name="email"
+                id="modal-user-email"
+              />
+            </label>
+            <label class="modal-label" for="modal-user-comment"
+              >Komentarz</label
+            >
+            <label class="modal-textarea">
+              <textarea
+                class="textarea"
+                name="comment"
+                rows="5"
+                placeholder="Wprowadź tekst"
+              ></textarea>
+            </label>
+            <div class="conteiner-checkbox">
+              <input
+                class="checkbox-input"
+                type="checkbox"
+                name="statute"
+                value="1"
+                id="modal-checkbox"
+              />
+              <label class="checkbox-label" for="modal-checkbox"
+                ><p>
+                  Oświadczam iż akcektuję <a>Regulamin</a> i
+                  <a>Politykę Prywatności</a>
+                </p></label
+              >
+            </div>
+            <div class="conteiner-button">
+              <button class="button-modal" type="submit">Wyślij</button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
     <script src="./js/modal.js"></script>
