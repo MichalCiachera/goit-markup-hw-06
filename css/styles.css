@@ -528,12 +528,14 @@ ul {
   gap: 12px;
 }
 .input-footer {
+  padding: 15px 295px 15px 15px;
   color: var(--color-five);
   width: 358px;
   background-color: rgba(0, 0, 0, 0);
   border: 1px solid var(--background-sixteen);
   filter: drop-shadow(var(--background-seventeen));
   border-radius: 4px;
+  transition-property: border;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   outline: 0;
@@ -543,7 +545,7 @@ ul {
   font-size: 16px;
   line-height: 1.25;
   letter-spacing: 0.03em;
-  padding: 15px 295px 15px 16px;
+  padding: 15px 295px 15px 0;
 }
 .input-footer:hover,
 .input-footer:focus,
@@ -647,6 +649,9 @@ ul {
   line-height: 1.17;
   letter-spacing: 0.01em;
   color: var(--color-four);
+  transition-property: outline;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .input:hover {
   outline: none;
@@ -662,6 +667,9 @@ ul {
   line-height: 1.17;
   letter-spacing: 0.01em;
   color: var(--color-four);
+  transition-property: color, outline;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .textarea:hover {
   outline: none;
@@ -685,6 +693,9 @@ ul {
   margin-bottom: 10px;
   align-items: center;
   border-radius: 5px;
+  transition-property: border, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-input:focus-within {
   border: 1px solid var(--color-two);
@@ -698,29 +709,84 @@ ul {
   margin-bottom: 10px;
   align-items: center;
   border-radius: 5px;
+  transition-property: border, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-textarea:focus-within {
   border: 1px solid var(--color-two);
   fill: var(--color-two);
 }
-.checkbox-label p {
+.checkbox-control p {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--color-four);
   margin: 0;
 }
-.checkbox-label a {
+.checkbox-control a {
   text-decoration: underline;
   color: var(--color-two);
   cursor: pointer;
 }
-.conteiner-checkbox {
-  display: flex;
-  gap: 7px;
+.container-checkbox {
+  position: static;
+  display: inline-flex;
+  width: 448px;
   justify-content: center;
   padding-top: 10px;
   padding-bottom: 30px;
+}
+.checkbox-control {
+  position: relative;
+  display: inline-flex;
+  gap: 7px;
+  border-radius: 2px;
+  transition: box-shadow 0.15s ease-in;
+}
+.checkbox-input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+.checkbox-label {
+  display: block;
+  width: 100%;
+  margin-top: 4.5px;
+  background-color: var(--color-five);
+  border: 1px solid var(--color-one);
+  border-radius: 2px;
+  cursor: pointer;
+  width: 16px;
+  height: 15px;
+  transition-property: border-color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.checkbox-label-svg {
+  margin-bottom: 3.5px;
+  margin-left: 2px;
+  fill: var(--color-five);
+}
+.checkbox-label::after {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 4px;
+  top: 3px;
+  width: 55%;
+  height: 40%;
+}
+.checkbox-label:hover {
+  border-color: var(--color-two);
+}
+.checkbox-input:checked + .checkbox-label {
+  border-color: var(--color-two);
+  background-color: var(--color-two);
+}
+.checkbox-input:checked + .checkbox-label::after {
+  border-color: var(--color-five);
 }
 .conteiner-button {
   display: flex;
